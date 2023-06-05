@@ -60,7 +60,9 @@ class Bank():
         self.balance = 0
 
     def add_deposit(self, amount):   # Instance method
+        self.address = "Ahm"
         self.balance += amount
+        print(self.address)
 
     def withdraw(self, amount):   # Instance method
         self.balance -= amount
@@ -73,37 +75,91 @@ class Bank():
         return cls.ROI
     
 om = Bank(10, "Om")
-cherish = Bank(20, "Cherish")
+# cherish = Bank(20, "Cherish")
 
-om.add_deposit(5000)
-cherish.add_deposit(30)
+# om.add_deposit(5000)
+# cherish.add_deposit(30)
 
-print(om.check_bal())
-print(cherish.check_bal())
+# print(om.check_bal())
+# print(cherish.check_bal())
 
-print(Bank.ROI)   # 5
-# print(Bank.balance)   # Error
+# print(Bank.ROI)   # 5
+# # print(Bank.balance)   # Error
 
-print(cherish.ROI)  # 5
-print(om.ROI)  # 5
+# print(cherish.ROI)  # 5
+# print(om.ROI)  # 5
 
-
+# print(id(Bank.ROI))     # 2460165407088
+# print(id(cherish.ROI))  # 2460165407088
 # om.ROI = 10
 
-# print(Bank.ROI)
-# print(cherish.ROI)
-# print(om.ROI)
+# print(id(om.ROI))   # 2460165407248
 
-Bank.ROI = 56
+# # print(Bank.ROI)
+# # print(cherish.ROI)
+# # print(om.ROI)
 
-print(Bank.ROI)   # 56
-print(cherish.ROI) # 56
-print(om.ROI)   # 56
+# Bank.ROI = 56
 
-om.age = 90
+# print(Bank.ROI)   # 56
+# print(cherish.ROI) # 56
+# print(om.ROI)   # 56
 
-print(om.age)
-# print(cherish.age)   # GIves Error
+# om.age = 90
+
+# print(om.age)
+# # print(cherish.age)   # GIves Error
 
 
-print(Bank.check_ROI())   # 56
+
+# print(Bank.check_ROI())   # 56
+
+# print(om.address)
+
+Bank.color = "Red"
+print(Bank.color)
+
+
+class Compelx:
+    '''This is Complex Class'''
+    def __init__(self,a1, b1):
+        '''This is Constructor of Complex class'''
+        self.a = a1
+        self.b = b1
+
+    def sum(self, x):
+        self.a += x.a
+        self.b += x.b
+        print(self.a,self.b)
+    
+c1 = Compelx(10,20)
+c2 = Compelx(40,90)
+# c3 = Compelx()
+
+c1.sum(c2)
+
+print(c1.__doc__)   # This is Complex Class
+print(c1.__init__.__doc__)   # This is Constructor of Complex class
+
+
+# Inheritance
+
+class Alto:
+    ref = ''
+    type = ''
+
+    def __init__(self, name, balance):
+        self._name = name
+        self.__bal = balance
+        print(self.__bal)
+
+    def Gear(self):
+        print("This is Gear Method Under Alto class")
+
+
+# # class Ferrari : public Alto
+# class Ferrari():
+a1 = Alto("Manish", 900)
+
+print(a1._name)   # Manish
+# print(a1.__bal)   # Manish
